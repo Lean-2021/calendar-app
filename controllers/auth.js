@@ -20,6 +20,7 @@ export const createUser = async (req = request, res = response) => {
       ok: true,
       uid: user.id,
       name: user.name,
+      email:user.email,
       token,
     });
   } catch (error) {
@@ -71,6 +72,8 @@ export const renewToken = async(req, res = response) => {
 
   res.json({
     ok: true,
+    uid,
+    name,
     token,
   });
 };
